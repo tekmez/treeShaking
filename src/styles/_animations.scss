@@ -1,0 +1,13 @@
+@keyframes shakingAnimation {
+    // 0%   {left:248px;}
+    // 100% {left:298px;}
+    0%   {left:0;}
+    100% {left:50px;}
+  }
+@keyframes dropAnimation {
+    0% {transform:scaleY(0.9) rotate(0deg);}
+    25% {transform: translateY(100px) rotate(90deg);}
+    50% {transform: translateY(200px) rotate(180deg);}
+    75% {transform: translateY(300px) rotate(270deg);}
+    100% {transform: translateY(400px) rotate(360deg);}
+}
