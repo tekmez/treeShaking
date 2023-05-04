@@ -21,10 +21,23 @@
     height: auto;
     font-family: 'Luckiest Guy', cursive;
     font-size: 48px;
+    background-color: #FFBF00;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: 4px 12px;
+    cursor: pointer;
+    transition: all .3s;
+    &:hover{
+      transform: scale(1.1);
+    }
+    &:active{
+      opacity: 0.7;
+    }
   }
 }
 .shaking{
-    animation: shakingAnimation 0.2s linear infinite alternate;
+    animation: shakingAnimation .25s linear infinite alternate;
 }
 
 .dropping{
