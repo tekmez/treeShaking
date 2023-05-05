@@ -1,5 +1,5 @@
 import React from 'react';
-import TreeSvg from '../svg/TreeSvg';
+import TreeSvg from '../assets/TreeSvg';
 
 const Tree = ({ isShake }) => {
   return (

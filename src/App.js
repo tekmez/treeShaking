@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
-import './styles/test.scss';
 import Tree from './components/Tree';
-import './styles/app.scss';
 import Button from './components/Button';
 import Cloud from './components/Cloud';
 import Apple from './components/Apple';
-import basket from './svg/basket2.png';
+import basket from './assets/basket2.png';
+import './styles/app.scss';
 function App() {
   const [isShake, setIsShake] = useState(false);
   const [animationFinishedList, setAnimationFinishedList] = useState([]);
@@ -28,13 +27,12 @@ function App() {
     setIsShake(!isShake);
     setAnimationFinishedList([]);
   };
-  const onAnimationEnd = (e, index) => {
+  const onAnimationEnd = (index) => {
     setAnimationFinishedList((prevList) => {
       const newList = [...prevList];
       newList[index] = true;
       return newList;
     });
-    console.log(e);
   };
   console.log(animationFinishedList);
   return (
@@ -45,7 +43,7 @@ function App() {
       <div className="container">
         {applePositions.map((apple, i) => (
           <Apple
-            onAnimationEnd={(e) => onAnimationEnd(e, i)}
+            onAnimationEnd={() => onAnimationEnd(i)}
             isShake={isShake}
             style={{
               left: apple.left,
@@ -57,7 +55,7 @@ function App() {
         ))}
         <Tree isShake={isShake} />
         <Button isShake={isShake} onClick={handleClickShake} />
-        <img src={basket} className="basket2" />
+        <img src={basket} className="basket" />
       </div>
     </main>
   );

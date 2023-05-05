@@ -1,5 +1,5 @@
 import React from 'react';
-import CloudSvg from '../svg/CloudSvg';
+import CloudSvg from '../assets/CloudSvg';
 
 const Cloud = ({ className }) => {
   return (
