@@ -11,6 +11,9 @@
     50% {transform: translateY(200px) rotate(180deg);}
     75% {transform: translateY(300px) rotate(270deg);}
     100% {transform: translateY(400px) rotate(360deg);}
+    to{
+      top: 40%;
+    }
 }
 
 @keyframes cloudAnimation {

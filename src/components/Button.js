@@ -1,9 +1,9 @@
 import React from 'react';
 
-const Button = ({ isShake, setIsShake }) => {
+const Button = ({ isShake, onClick }) => {
   return (
-    <button className="shakeBtn" onClick={() => setIsShake(!isShake)}>
-      SHAKE
+    <button className="shakeBtn" onClick={onClick}>
+      {isShake ? 'RESET' : 'SHAKE'}
     </button>
   );
 };
