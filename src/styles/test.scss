@@ -44,3 +44,12 @@
     transition: all 0.3s;
     animation: dropAnimation 1.3s linear forwards;
 }
+.cloud{
+  animation: cloudAnimation 20s linear infinite alternate;
+}
+.cloud2{
+  animation: cloudAnimation2 20s linear infinite alternate;
+}
+.cloud3{
+  animation: cloudAnimation3 20s linear infinite alternate;
+}
