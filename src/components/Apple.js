@@ -1,8 +1,8 @@
 import React from 'react';
 import AppleSvg from '../svg/AppleSvg';
-const Apple = ({ style, isShake }) => {
+const Apple = ({ style, isShake, onAnimationEnd }) => {
   return (
-    <div className={`apple ${isShake && 'dropping'}`} style={style}>
+    <div onAnimationEnd={onAnimationEnd} className={`apple ${isShake && 'dropping'}`} style={style}>
       <AppleSvg />
     </div>
   );

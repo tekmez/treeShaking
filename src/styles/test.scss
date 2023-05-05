@@ -75,3 +75,15 @@
 .cloud3{
   animation: cloudAnimation3 20s linear infinite alternate;
 }
+.basket2{
+  width: 400px;
+  height: 150px;
+  bottom: 0;
+  // height: 250px;
+  // bottom: 0px;
+  position: absolute;
+  left: 30%;
+  // z-index: 9999;
+  // background-image: url('../svg/basket2.png');
+  // background-repeat: no-repeat;
+}

@@ -5,25 +5,19 @@ import './styles/app.scss';
 import Button from './components/Button';
 import Cloud from './components/Cloud';
 import Apple from './components/Apple';
+import basket from './svg/basket2.png';
 function App() {
   const [isShake, setIsShake] = useState(false);
+  const [animationFinishedList, setAnimationFinishedList] = useState([]);
+  const appleClipPathStyle = [
+    'polygon(0% 0%, 100% 0%, 98% 58%, 39% 40%)',
+    'polygon(0% 0%, 100% 0%, 99% 62%, 0% 62%)',
+    'polygon(0% 0%, 100% 0%, 99% 62%, 0% 62%)',
+    'polygon(0% 0%, 100% 0%, 94% 50%, 0% 59%)',
+    'polygon(0% 0%, 100% 0%, 99% 62%, 0% 54%)'
+  ];
   const clouds = ['cloud', 'cloud2', 'cloud3'];
   const applePositions = [
-    // { left: 260, top: 400 },
-    // { left: 400, top: 200 },
-    // { left: 500, top: 300 },
-    // { left: 650, top: 255 },
-    // { left: 800, top: 350 }
-    // { left: 260, top: 10 },
-    // { left: 400, top: 100 },
-    // { left: 650, top: 200 },
-    // { left: 750, top: 275 },
-    // { left: 850, top: 350 }
-    // { left: 260, top: '0.625em' },
-    // { left: 400, top: '6.25em' },
-    // { left: 650, top: '12.5em' },
-    // { left: 750, top: '17.19em' },
-    // { left: 850, top: '21.88em' }
     { left: '30%', top: '15%' },
     { left: '40%', top: '25%' },
     { left: '37%', top: '35%' },
@@ -32,7 +26,17 @@ function App() {
   ];
   const handleClickShake = () => {
     setIsShake(!isShake);
+    setAnimationFinishedList([]);
   };
+  const onAnimationEnd = (e, index) => {
+    setAnimationFinishedList((prevList) => {
+      const newList = [...prevList];
+      newList[index] = true;
+      return newList;
+    });
+    console.log(e);
+  };
+  console.log(animationFinishedList);
   return (
     <main className="app">
       {clouds.map((cloud, i) => (
@@ -40,10 +44,20 @@ function App() {
       ))}
       <div className="container">
         {applePositions.map((apple, i) => (
-          <Apple isShake={isShake} style={{ left: apple.left, top: apple.top }} key={i} />
+          <Apple
+            onAnimationEnd={(e) => onAnimationEnd(e, i)}
+            isShake={isShake}
+            style={{
+              left: apple.left,
+              top: apple.top,
+              clipPath: animationFinishedList[i] ? appleClipPathStyle[i] : ''
+            }}
+            key={i}
+          />
         ))}
         <Tree isShake={isShake} />
         <Button isShake={isShake} onClick={handleClickShake} />
+        <img src={basket} className="basket2" />
       </div>
     </main>
   );

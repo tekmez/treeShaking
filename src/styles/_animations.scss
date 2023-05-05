@@ -7,12 +7,13 @@
 }
 @keyframes dropAnimation {
     0% {transform:scaleY(0.9) rotate(0deg);}
-    25% {transform:  rotate(90deg);}
-    50% {transform:  rotate(180deg);}
-    75% {transform:  rotate(270deg);}
+    25% {transform: rotate(90deg);}
+    50% {transform: rotate(180deg);}
+    75% {transform: rotate(270deg);}
     100% {transform: rotate(360deg);}
     to{
       top: 85%;
+
     }
 }
 
