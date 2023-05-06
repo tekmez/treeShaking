@@ -6,7 +6,7 @@
     animation-delay: $delay;
   }
 }
-@mixin cloudCss($animationName, $time){
+@mixin animationCss($animationName, $time){
   animation: $animationName $time linear infinite alternate;
 };
 
@@ -65,7 +65,7 @@
   bottom: 0;
 }
 .shaking{
-  @include cloudCss(shakingAnimation, .25s);
+  @include animationCss(shakingAnimation, .25s);
     animation-iteration-count: 12;
 }
 
@@ -74,11 +74,14 @@
     animation: dropAnimation 1.3s linear forwards;
 }
 .cloud{
-  @include cloudCss(cloudAnimation, 20s);
+  @include animationCss(cloudAnimation, 20s);
+  margin-top: 25px
 }
 .cloud2{
-  @include cloudCss(cloudAnimation2, 20s);
+  @include animationCss(cloudAnimation2, 20s);
+  margin-top: 25px
 }
 .cloud3{
-  @include cloudCss(cloudAnimation3, 20s);
+  @include animationCss(cloudAnimation3, 20s);
+  margin-top: 25px
 }
