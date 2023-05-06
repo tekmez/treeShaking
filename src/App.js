@@ -34,7 +34,6 @@ function App() {
       return newList;
     });
   };
-  console.log(animationFinishedList);
   return (
     <main className="app">
       {clouds.map((cloud, i) => (

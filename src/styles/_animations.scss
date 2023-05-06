@@ -1,40 +1,21 @@
-@keyframes shakingAnimation {
-    0% { transform: translateX(0) }
-    25% { transform: translateX(5px) }
-    50% { transform: translateX(-5px) }
-    75% { transform: translateX(5px) }
-    100% { transform: translateX(0) }
+@mixin animation-mixin($name, $x0, $x25, $x50, $x75, $x100){
+  @keyframes #{$name} {
+    0% { transform: translateX($x0) }
+    25% { transform: translateX( $x25) }
+    50% { transform: translateX($x50) }
+    75% { transform: translateX($x75) }
+    100% { transform: translateX($x100) }
 }
+}
+@include animation-mixin(shakingAnimation, 0, 5px, -5px,5px ,0 );
+@include animation-mixin(cloudAnimation, 0, 200px, 400px, 600px, 800px);
+@include animation-mixin(cloudAnimation2, 100px, 200px, 300px, 400px, 500px);
+@include animation-mixin(cloudAnimation3, 450px, 350px, 250px, 150px, 50px);
+
 @keyframes dropAnimation {
-    0% {transform:scaleY(0.9) rotate(0deg);}
+    0% {transform:rotate(0deg);}
     25% {transform: rotate(90deg);}
     50% {transform: rotate(180deg);}
     75% {transform: rotate(270deg);}
-    100% {transform: rotate(360deg);}
-    to{
-      top: 85%;
-
-    }
-}
-
-@keyframes cloudAnimation {
-  0% { transform: translateX(0) }
-  25% { transform: translateX(200px) }
-  50% { transform: translateX(400px) }
-  75% { transform: translateX(600px) }
-  100% { transform: translateX(800px) }
-}
-@keyframes cloudAnimation2 {
-  0% { transform: translateX(100px) }
-  25% { transform: translateX(200px) }
-  50% { transform: translateX(300px) }
-  75% { transform: translateX(400px) }
-  100% { transform: translateX(500px) }
-}
-@keyframes cloudAnimation3 {
-  0% { transform: translateX(450px) }
-  25% { transform: translateX(350px) }
-  50% { transform: translateX(250px) }
-  75% { transform: translateX(150px) }
-  100% { transform: translateX(50px) }
+    100% {top: 85%;transform: rotate(360deg);}
 }
